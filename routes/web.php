@@ -32,6 +32,10 @@ Route::get('/post/{post}/comment/create', function (Post $post) {
 });
 
 //Product Route
+Route::get('/products', function () {
+    return Product::with('comments')->get();
+});
+
 Route::get('/product/create', function () {
     return Product::create([
         'name'=> 'Macbook Pro',
