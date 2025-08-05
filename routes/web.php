@@ -54,6 +54,10 @@ Route::get('/product/{product}/comment/create', function (Product $product) {
 });
 
 //Video Route
+Route::get('/videos', function () {
+    return Video::with('comments')->get();
+});
+
 Route::get('/video/create', function () {
     return Video::create([
         'title' => 'Video Episode 1',
