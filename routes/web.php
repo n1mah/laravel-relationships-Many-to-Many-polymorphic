@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Comment;
 use App\Models\Post;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +16,14 @@ Route::get('/post/create', function () {
         'writer' => 'Nima',
     ]);
 });
+
+Route::get('/product/create', function () {
+    return Product::create([
+        'name'=> 'Macbook Pro',
+        'category' => 'Laptop',
+        'brand' => 'Apple',
+        'price' => '1900',
+    ]);
+});
+
 
