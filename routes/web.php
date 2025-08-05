@@ -45,6 +45,7 @@ Route::get('/product/{product}/comment/create', function (Product $product) {
     ]);
 });
 
+//Video Route
 Route::get('/video/create', function () {
     return Video::create([
         'title' => 'Video Episode 1',
@@ -53,6 +54,14 @@ Route::get('/video/create', function () {
         'cover'=>'https://nimaheidari.com/s1/es1/cover.jpg',
         'author'=>'Nima Heidari',
         'views'=>11,
+    ]);
+});
+
+Route::get('/video/{video}/comment/create', function (Video $video) {
+    return $video->comments()->create([
+        'name' => 'Jay',
+        'text' => 'Lorem',
+        'score' => 4,
     ]);
 });
 
