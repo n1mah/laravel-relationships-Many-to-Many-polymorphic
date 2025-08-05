@@ -10,11 +10,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Post Route
 Route::get('/post/create', function () {
     return Post::create([
         'title' => 'Laravel 12',
         'body' => 'This is laravel 12 . lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
         'writer' => 'Nima',
+    ]);
+});
+
+Route::get('/post/{post}/comment/create', function (Post $post) {
+    return $post->comments()->create([
+        'name' => 'sara',
+        'text' => 'Very Good Article',
+        'score' => 5,
     ]);
 });
 
