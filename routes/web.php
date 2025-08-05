@@ -78,3 +78,9 @@ Route::get('/video/{video}/comment/create', function (Video $video) {
 });
 
 
+//Comment Route
+Route::get('/comments', function () {
+    return Comment::all();
+});
+
+
