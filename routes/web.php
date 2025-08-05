@@ -27,12 +27,21 @@ Route::get('/post/{post}/comment/create', function (Post $post) {
     ]);
 });
 
+//Product Route
 Route::get('/product/create', function () {
     return Product::create([
         'name'=> 'Macbook Pro',
         'category' => 'Laptop',
         'brand' => 'Apple',
         'price' => '1900',
+    ]);
+});
+
+Route::get('/product/{product}/comment/create', function (Product $product) {
+    return $product->comments()->create([
+        'name' => 'meri',
+        'text' => 'Not Usable',
+        'score' => 2,
     ]);
 });
 
