@@ -11,4 +11,19 @@ class Comment extends Model
         'text',
         'score',
     ];
+
+    public function posts()
+    {
+        return $this->morphedByMany(Post::class, 'commentable');
+    }
+
+    public function products()
+    {
+        return $this->morphedByMany(Product::class, 'commentable');
+    }
+
+    public function videos()
+    {
+        return $this->morphedByMany(Video::class, 'commentable');
+    }
 }

@@ -14,4 +14,9 @@ class Video extends Model
         'author',
         'views',
     ];
+
+    public function comments()
+    {
+        return $this->morphToMany(Comment::class, 'commentable');
+    }
 }

@@ -12,4 +12,9 @@ class Product extends Model
         'brand',
         'price',
     ];
+
+    public function comments()
+    {
+        return $this->morphToMany(Comment::class, 'commentable');
+    }
 }

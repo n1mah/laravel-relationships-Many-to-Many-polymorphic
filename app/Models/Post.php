@@ -11,4 +11,9 @@ class Post extends Model
         'body',
         'writer',
     ];
+
+    public function comments()
+    {
+        return $this->morphToMany(Comment::class, 'commentable');
+    }
 }
