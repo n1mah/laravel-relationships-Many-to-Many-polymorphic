@@ -11,6 +11,10 @@ Route::get('/', function () {
 });
 
 //Post Route
+Route::get('/posts', function () {
+    return Post::with('comments')->get();
+});
+
 Route::get('/post/create', function () {
     return Post::create([
         'title' => 'Laravel 12',
