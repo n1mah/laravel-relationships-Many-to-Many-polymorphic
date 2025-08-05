@@ -86,3 +86,7 @@ Route::get('/comments', function () {
 Route::get('/comments/video', function () {
     return Comment::whereHas('videos')->with('videos')->get();
 });
+
+Route::get('/comments/product', function () {
+    return Comment::whereHas('products')->with('products')->get();
+});
